@@ -4,8 +4,38 @@
       %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
 - else
   .row.liked
-    .large-12.columns.banner
-      %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
+    .large-3.columns.banner
+    .large-8.columns.register
+      %h1
+        Join our awesome mailing list..
+      %form#mailinglist{:method => "POST", :action => subscribe_path}
+        .row
+          .large-8.columns
+            .row
+              .large-3.columns
+                %label.inline.right{:for => "fan[name]"}
+                  Your Name
+              .large-9.columns
+                %input#name{:type => "text", :name => "fan[name]", :placeholder => "What do your friends call you?", :required => ""}
+            .row
+              .large-3.columns
+                %label.inline.right{:for => "fan[email]"}
+                  Email Address
+              .large-9.columns
+                %input#email.email{:type => "email", :name => "fan[email]", :placeholder => "Our's is promos@gotvkenya.com", :required => ""}
+                %small
+                  We'll never send you SPAM
+                %label.error.duplicate
+                  Someone has already registered with that email. If it's you, that's great!
+            .row
+              .large-3.columns
+              .large-9.columns
+                %input.button.medium.radius.signup{:type => "submit", :value => "Sign Up!"}
+    .large-8.columns.thankyou
+      %h1
+        Thank you
+        %span#fan_name
+        for joining our awesome list...
   .row
     .section-container.tabs.auto{ "data-section" => "tabs" }
       %section

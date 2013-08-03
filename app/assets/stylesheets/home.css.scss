@@ -5,6 +5,34 @@
 body{
   font-family: 'Lato', sans-serif;
 }
+
+input[type="email"].email {
+  margin-bottom: 5px;
+}
+
+label.error {
+  margin-bottom: 10px;
+}
+
+.button {
+  background-color: #07944A;
+  border-color: #07944A;
+}
+
+
+.duplicate, .thankyou {
+  display: none;
+}
+
+.button:hover {
+  background-color: #07554A;
+  border-color: #07554A;
+}
+
+.signup {
+  margin-top: 30px;
+}
+
 .banner{height: 315px;}
 
 .liked {

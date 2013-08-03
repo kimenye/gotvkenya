@@ -13,11 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require jquery.validate.min
+//= require home
 
 $(function(){
     $(document).foundation();
-    $.get('https://graph.facebook.com/me?fields=id', function(data) { console.log("data", data); });
 });
 
 
