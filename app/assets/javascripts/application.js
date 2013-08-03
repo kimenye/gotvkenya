@@ -15,4 +15,9 @@
 //= require foundation
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function(){
+    $(document).foundation();
+    $.get('https://graph.facebook.com/me?fields=id', function(data) { console.log("data", data); });
+});
+
+
