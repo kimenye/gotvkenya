@@ -1,2 +1,60 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+- if !is_facebook_fan(params)
+  .row
+    .large-12.columns.banner
+      %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
+- else
+  .row.liked
+    .large-12.columns.banner
+      %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
+  .row
+    .section-container.tabs.auto{ "data-section" => "tabs" }
+      %section
+        %p.title{"data-section-title" => ""}
+          %a.tab-title.tab1{:href => "#panel1"}
+            Only 4499/-
+        .content{"data-section-content" => ""}
+          %img{:alt => "Great Offer", :src => "/assets/greatoffer.png"}
+          %h3
+            Great Special offer price
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %section
+        %p.title{"data-section-title" => ""}
+          %a.tab-title.tab1{:href => "#panel2"}
+            Only 4499/-
+        .content{"data-section-content" => ""}
+          %img{:alt => "Local", :src => "/assets/local.png"}
+          %h3
+            Watch the best local tv free
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      %section
+        %p.title{"data-section-title" => ""}
+          %a.tab-title.tab1{:href => "#panel3"}
+            Only 4499/-
+        .content{"data-section-content" => ""}
+          %img{:alt => "Go Digital", :src => "/assets/godigital.png"}
+          %h3
+            Go Digital now
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+-#%footer
+  .row
+    .large-12.large-centered.columns
+      %p
+        GoTV Kenya

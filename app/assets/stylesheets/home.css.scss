@@ -1,3 +1,76 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body{
+  font-family: 'Lato', sans-serif;
+}
+.banner{height: 315px;}
+
+.liked {
+  .banner {
+    margin-bottom: 100px;
+  }
+}
+.section-container.tab-content{height: 150px;}
+
+.section-container.tabs section.active .title, .section-container.tabs .section.active .title   {
+  background-color: #fff;
+  color: #e20c00;
+  border-bottom: none;
+  height: 70px;
+  border-bottom: none;
+}
+
+
+.section-container.tabs section .title, .section-container.tabs .section .title {
+  background-color: #07944A;
+  color: #fff;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+}
+
+.section-container.tabs section:nth-child(2) .title {
+  margin-left: 20px;
+  /*margin-right: 50px;*/
+}
+
+.section-container.tabs section:nth-child(3) .title {
+  margin-left: 39px;
+  width: 230px;
+}
+
+.section-container.tabs section .title .tab-title {
+  width: 230px;
+  display: block;
+  font: 20px Lato, sans-serif;
+  color: #fff;
+  font-weight: 600;
+}
+
+.section-container.tabs section.active .title .tab-title {
+  color: #e20c00;
+}
+
+.section-container{
+  /*text-align: center;*/
+}
+
+.section-container.auto > section > .content img{
+  float: left;
+  margin-right: 20px;
+}
+
+.section-container.auto > section > .content{
+  float: left;
+  /*font-family: 'Lato', sans-serif;*/
+}
+
+.section-container.tabs section h3{
+  color: #07944A;
+}
+
+footer{
+  height: 40px;
+  background: #fff;
+}
