@@ -4,8 +4,8 @@
       %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
 - else
   .row.liked
-    .large-3.columns.banner
-    .large-8.columns.register
+    -#.large-3.columns.banner
+    .large-12.columns.register
       %h1
         Join our awesome mailing list..
       %form#mailinglist{:method => "POST", :action => subscribe_path}
