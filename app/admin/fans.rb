@@ -1,3 +1,3 @@
 ActiveAdmin.register Fan do
-  actions :index
+  #actions :index
 end
