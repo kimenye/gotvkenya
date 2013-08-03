@@ -4,6 +4,7 @@ module ApplicationHelper
       p = params['signed_request'].split('.')[1]
       json = Base64.decode64(p + "=" * (4 - p.size % 4))
       data = ActiveSupport::JSON.decode(json)
+      puts ">>> Decode Json #{data}"
       liked = data["page"]["liked"]
     end
   end
