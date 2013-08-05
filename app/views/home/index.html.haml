@@ -1,90 +1,83 @@
-- if !is_facebook_fan(params)
+- if is_facebook_fan(params)
   .row
     .large-12.columns.banner
       %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
 - else
   .row.liked
-    -#.large-3.columns.banner
     .large-12.columns.register
-      %h1
-        Join our awesome mailing list..
+      
       %form#mailinglist{:method => "POST", :action => subscribe_path}
         .row
+          .large-4.columns.que_pic
+            %img{:src => "assets/question-pic.jpg", :alt => ""}/
           .large-8.columns
+            %h3.the_que_title Answer and Win !
+            %h4.the_que On which channel can you find this dance action ?
             .row
-              .large-3.columns
-                %label.inline.right{:for => "fan[name]"}
-                  Your Name
-              .large-9.columns
+              .large-12.columns
+                %input#name{:type => "text", :name => "fan[answer]", :placeholder => "Show, Star, Channel, Time?", :required => ""}
+            .row
+              .large-12.columns
                 %input#name{:type => "text", :name => "fan[name]", :placeholder => "What do your friends call you?", :required => ""}
             .row
-              .large-3.columns
-                %label.inline.right{:for => "fan[email]"}
-                  Email Address
-              .large-9.columns
-                %input#email.email{:type => "email", :name => "fan[email]", :placeholder => "Our's is promos@gotvkenya.com", :required => ""}
-                %small
-                  We'll never send you SPAM
+              .large-12.columns
+                %input#email.email{:type => "email", :name => "fan[email]", :placeholder => "Your real email, We don't spam. Promise", :required => ""}
                 %label.error.duplicate
                   Someone has already registered with that email. If it's you, that's great!
             .row
-              .large-3.columns
-              .large-9.columns
-                %input.button.medium.radius.signup{:type => "submit", :value => "Sign Up!"}
-    .large-12.columns.thankyou
-      %h1
+              .large-12.columns
+                %input.button.medium.radius.signup{:type => "submit", :value => "That's my final answer"}
+  .row.thankyou
+    .large-12.columns
+      %img{:src => "/assets/main_banner2.jpg", :alt => ""}
+      %h3.thanks
         Thank you
         %span#fan_name
-        for joining our awesome list...
-  .row
-    .section-container.tabs.auto{ "data-section" => "tabs" }
-      %section
-        %p.title{"data-section-title" => ""}
-          %a.tab-title.tab1{:href => "#panel1"}
-            Only 4499/-
-        .content{"data-section-content" => ""}
-          %img{:alt => "Great Offer", :src => "/assets/greatoffer.png"}
-          %h3
-            Great Special offer price
-          %p
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      %section
-        %p.title{"data-section-title" => ""}
-          %a.tab-title.tab1{:href => "#panel2"}
-            Only 4499/-
-        .content{"data-section-content" => ""}
-          %img{:alt => "Local", :src => "/assets/local.png"}
-          %h3
-            Watch the best local tv free
-          %p
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      %section
-        %p.title{"data-section-title" => ""}
-          %a.tab-title.tab1{:href => "#panel3"}
-            Only 4499/-
-        .content{"data-section-content" => ""}
-          %img{:alt => "Go Digital", :src => "/assets/godigital.png"}
-          %h3
-            Go Digital now
-          %p
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
--#%footer
-  .row
-    .large-12.large-centered.columns
-      %p
-        GoTV Kenya
+        Learn more about GOtv.
+    .large-12.columns
+      .section-container.tabs.auto{ "data-section" => "tabs" }
+        %section
+          %p.title{"data-section-title" => ""}
+            %a.tab-title.tab1{:href => "#panel1"}
+              Only 4499/-
+          .content{"data-section-content" => ""}
+            %img{:alt => "Great Offer", :src => "/assets/greatoffer.png"}
+            %h3
+              Great Special offer price
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        %section
+          %p.title{"data-section-title" => ""}
+            %a.tab-title.tab1{:href => "#panel2"}
+              Only 4499/-
+          .content{"data-section-content" => ""}
+            %img{:alt => "Local", :src => "/assets/local.png"}
+            %h3
+              Watch the best local tv free
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        %section
+          %p.title{"data-section-title" => ""}
+            %a.tab-title.tab1{:href => "#panel3"}
+              Only 4499/-
+          .content{"data-section-content" => ""}
+            %img{:alt => "Go Digital", :src => "/assets/godigital.png"}
+            %h3
+              Go Digital now
+            %p
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

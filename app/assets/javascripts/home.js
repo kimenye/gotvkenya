@@ -7,6 +7,7 @@ $(function(){
                     url: "/subscribe",
                     type: "POST",
                     data: { fan: {
+                        answer: $('#answer').val(),
                         name: $('#name').val(),
                         email: $('#email').val()
                     }

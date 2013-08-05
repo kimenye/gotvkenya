@@ -19,8 +19,15 @@ label.error {
   border-color: #07944A;
 }
 
+.register{
+  padding-top: 20px;
+}
 
-.duplicate, .thankyou {
+/*.duplicate, .thankyou {
+  display: none;
+}*/
+
+.duplicate {
   display: none;
 }
 
@@ -29,8 +36,11 @@ label.error {
   border-color: #07554A;
 }
 
+
+
 .signup {
-  margin-top: 30px;
+  margin-top: 11px;
+  float: none;
 }
 
 .banner{height: 315px;}
@@ -98,6 +108,30 @@ label.error {
   color: #07944A;
 }
 
+.thanks{
+  font-weight: 300;
+  font-size: 23px;
+  color: #07944A;
+  padding-top: 20px;
+}
+
+.the_que, .the_que_title{
+  font-weight: 300;
+  font-size: 23px;
+  color: #07944A;
+  /*padding-top: 30px;*/
+}
+
+.the_que_title{
+  font-size: 37px;
+  color: #e20c00;
+  margin-bottom: 0px;
+}
+
+.que_pic{
+  padding-top: 17px;
+
+}
 footer{
   height: 40px;
   background: #fff;
