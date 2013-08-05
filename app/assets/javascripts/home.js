@@ -20,9 +20,7 @@ $(function(){
                     } else {
                         $('.register').hide();
                         $('#fan_name').html(response.name);
-                        $('.thankyou').slideDown(500,function(){
-                            $('.tab-title.tab1').trigger('click');
-                        });
+                        $('.thankyou').show();
                     }
 
                 }

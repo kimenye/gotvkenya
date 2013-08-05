@@ -1,7 +1,7 @@
-- if is_facebook_fan(params)
+- if !is_facebook_fan(params)
   .row
     .large-12.columns.banner
-      %img.main-banner{:src => "/assets/main_banner.jpg", :alt => "You need to like our page"}
+      %img.main-banner{:src => "/assets/like-page.jpg", :alt => "You need to like our page"}
 - else
   .row.liked
     .large-12.columns.register
@@ -27,57 +27,42 @@
             .row
               .large-12.columns
                 %input.button.medium.radius.signup{:type => "submit", :value => "That's my final answer"}
-  .row.thankyou
-    .large-12.columns
+  .row
+    .large-12.columns.thankyou
       %img{:src => "/assets/main_banner2.jpg", :alt => ""}
       %h3.thanks
         Thank you
-        %span#fan_name
-        Learn more about GOtv.
+        %span#fan_name+.
+        Keep it GOtv for the best entertainment
     .large-12.columns
       .section-container.tabs.auto{ "data-section" => "tabs" }
         %section
           %p.title{"data-section-title" => ""}
             %a.tab-title.tab1{:href => "#panel1"}
-              Only 4499/-
+              GOtv Special Offer
           .content{"data-section-content" => ""}
-            %img{:alt => "Great Offer", :src => "/assets/greatoffer.png"}
+            %img{:alt => "Great Offer", :src => "/assets/tab2.jpg"}
             %h3
-              Great Special offer price
-            %p
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              GO for a great offer!
+            %p 
+              It’s easy, simply like our GOtv Facebook page for a chance to win a decoder and a month of free subscription so you can enjoy a great entertaining experience.
         %section
           %p.title{"data-section-title" => ""}
             %a.tab-title.tab2{:href => "#panel2"}
-              Only 4499/-
+              GOtv Variety
           .content{"data-section-content" => ""}
-            %img{:alt => "Local", :src => "/assets/local.png"}
+            %img{:alt => "Local", :src => "/assets/tab1.jpg"}
             %h3
-              Watch the best local tv free
+              Go for more variety
             %p
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Whether you’re a fan of sports, movies, reality shows, or searching for wholesome family entertainment, GOtv makes it happen simply and affordably. With our excellent sound and picture quality, entertainment will never be the same.
         %section
           %p.title{"data-section-title" => ""}
             %a.tab-title.tab3{:href => "#panel3"}
-              Only 4499/-
+              GOtv Digital
           .content{"data-section-content" => ""}
-            %img{:alt => "Go Digital", :src => "/assets/godigital.png"}
+            %img{:alt => "Go Digital", :src => "/assets/tab3.jpg"}
             %h3
-              Go Digital now
+              Go for Digital TV
             %p
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              Experience the best variety of entertainment on GOtv digital offering. With our crisp picture and sound, you get to enjoy quality channels for as little as Kshs 599 per month.
