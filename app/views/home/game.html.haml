@@ -1,0 +1,39 @@
+#memorygame.quizy-memorygame
+  %ul
+    %li.match1
+      %img{:src => "/assets/mtv.png"}
+    %li.match2
+      %img{:src => "/assets/supersport.png"}
+    %li.match3
+      %img{:src => "/assets/bet.png"}
+    %li.match4
+      %img{:src => "/assets/africamagic.png"}
+    %li.match5
+      %img{:src => "/assets/eafrica.png"}
+    %li.match6
+      %img{:src => "/assets/sonymax.png"}
+    %li.match7
+      %img{:src => "/assets/natgeo.png"}
+    %li.match8
+      %img{:src => "/assets/aljazeera.png"}
+    %li.match1
+      %img{:src => "/assets/mtv.png"}
+    %li.match2
+      %img{:src => "/assets/supersport.png"}
+    %li.match3
+      %img{:src => "/assets/bet.png"}
+    %li.match4
+      %img{:src => "/assets/africamagic.png"}
+    %li.match5
+      %img{:src => "/assets/eafrica.png"}
+    %li.match6
+      %img{:src => "/assets/sonymax.png"}
+    %li.match7
+      %img{:src => "/assets/natgeo.png"}
+    %li.match8
+      %img{:src => "/assets/aljazeera.png"}
+
+:javascript
+  $(function(){
+    $('#memorygame').quizyMemoryGame({ itemWidth: 150, itemHeight: 150, itemsMargin:20, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:200, resultIcons:true });
+  });
