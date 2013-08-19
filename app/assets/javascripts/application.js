@@ -15,8 +15,6 @@
 //= require foundation
 //= require jquery.validate.min
 //= require home
-//= require jquery.flip.min
-//= require jquery.quizymemorygame
 
 $(function(){
     $(document).foundation();

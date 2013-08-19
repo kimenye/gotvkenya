@@ -14,5 +14,6 @@ class HomeController < ApplicationController
   end
   
   def game
+    render :layout => "game"
   end
 end

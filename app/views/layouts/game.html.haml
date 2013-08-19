@@ -1,0 +1,13 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
+      %title= content_for?(:title) ? yield(:title) : "GOTV Memory Game"
+      %meta{:content => content_for?(:description) ? yield(:description) : "GOTV", :name => "description"}
+        = stylesheet_link_tag "game", :media => "all"
+        -#= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:300,400|Armata", :media => "all"
+        = javascript_include_tag "game"
+        = csrf_meta_tags
+        = yield(:head)
+  %body{:class => "#{controller_name} #{action_name}"}
+    = yield
