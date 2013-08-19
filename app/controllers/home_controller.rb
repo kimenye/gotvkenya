@@ -12,6 +12,10 @@ class HomeController < ApplicationController
     end
 
   end
+
+  def play
+    render :layout => "application"
+  end
   
   def game
     render :layout => "game"
