@@ -2,8 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
+body, .title {
   font-family: 'Lato', sans-serif;
+}
+
+.title {
+  font-weight: normal;
+  border-bottom: 1px solid lightgray;
+  color: #009444;
+}
+
+.game_banner {
+  display: block;
+  margin: auto;
+}
+
+.prizes {
+  margin-right: 30px;
+}
+
+.cta {
+  margin-top: 50px;
 }
 
 input[type="email"].email {
