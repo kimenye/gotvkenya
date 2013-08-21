@@ -6,6 +6,7 @@ Gotv::Application.routes.draw do
   match 'game' => 'home#game', :as => :game
   match 'play' => 'home#play', :as => :play
   match 'leaderboard' => 'home#leaderboard', :as => :leaderboard
+  match 'score' => 'home#score', :as => :score
 
   resources :fan
   ActiveAdmin.routes(self)

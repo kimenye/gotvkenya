@@ -1,4 +1,6 @@
 class HomeController < ApplicationController
+  skip_before_filter :verify_authenticity_token
+
   def index
   end
 
@@ -19,6 +21,12 @@ class HomeController < ApplicationController
 
   def leaderboard
     render :layout => "application"
+  end
+
+  def score
+    respond_to do |format|
+      format.all { render json: { :success => true }}
+    end
   end
   
   def game

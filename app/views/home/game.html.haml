@@ -39,5 +39,29 @@
 
 :javascript
   $(function(){
-    $('#memorygame').quizyMemoryGame({ itemWidth: 150, itemHeight: 150, itemsMargin:20, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:200, resultIcons:true, ref: "#{@game.ref}" });
+
+    var game_id = "#{@game.ref}";
+    $('#memorygame').quizyMemoryGame({
+      itemWidth: 150,
+      itemHeight: 150,
+      itemsMargin:20,
+      colCount:4,
+      animType:'flip',
+      flipAnim:'tb',
+      animSpeed:200,
+      resultIcons:true,
+      gameSummary: false,
+      onFinishCall : function(params) {
+        console.log("Finished the game ", params);
+        $.post('/score', {
+          num_clicks : params.clicks,
+          time: params.time,
+          ref: game_id
+        },
+        function(result) {
+          console.log("Result ", result);
+        });
+
+      }
+    });
   });
