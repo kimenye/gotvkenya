@@ -16,8 +16,14 @@ class HomeController < ApplicationController
   def play
     render :layout => "application"
   end
+
+  def leaderboard
+    render :layout => "application"
+  end
   
   def game
+    @game = Game.new({ :ref => Digest::MD5.hexdigest(Time.now.to_s) })
+    @game.save!
     render :layout => "game"
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805113610) do
+ActiveRecord::Schema.define(:version => 20130821120040) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -53,5 +53,18 @@ ActiveRecord::Schema.define(:version => 20130805113610) do
     t.datetime "updated_at", :null => false
     t.string   "answer"
   end
+
+  create_table "games", :force => true do |t|
+    t.integer  "fan_id"
+    t.datetime "start_time"
+    t.datetime "end_time"
+    t.integer  "num_clicks"
+    t.integer  "total_time"
+    t.string   "ref"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "games", ["fan_id"], :name => "index_games_on_fan_id"
 
 end

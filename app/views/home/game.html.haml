@@ -1,3 +1,7 @@
+.row
+  .large-12.columns
+    %h1.title
+      Match the GOtv channels
 #memorygame.quizy-memorygame
   %ul
     %li.match1
@@ -35,5 +39,5 @@
 
 :javascript
   $(function(){
-    $('#memorygame').quizyMemoryGame({ itemWidth: 150, itemHeight: 150, itemsMargin:20, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:200, resultIcons:true });
+    $('#memorygame').quizyMemoryGame({ itemWidth: 150, itemHeight: 150, itemsMargin:20, colCount:4, animType:'flip' , flipAnim:'tb', animSpeed:200, resultIcons:true, ref: "#{@game.ref}" });
   });
