@@ -52,16 +52,20 @@
       resultIcons:true,
       gameSummary: false,
       onFinishCall : function(params) {
-        console.log("Finished the game ", params);
-        $.post('/score', {
-          num_clicks : params.clicks,
-          time: params.time,
-          ref: game_id
-        },
-        function(result) {
-          console.log("Result ", result);
-        });
-
+        result(params.clicks,params.time)
       }
     });
+
+    function result(clicks,time) {
+      $.post('/score', {
+        num_clicks : clicks,
+        time: time,
+        ref: game_id
+      },
+      function(result) {
+        console.log("Result ", result);
+      });
+    }
+
+    //result(23,300);
   });
