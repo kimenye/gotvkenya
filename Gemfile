@@ -22,6 +22,8 @@ group :development do
   gem 'binding_of_caller', :platforms=>[:mri_19, :rbx]
   gem 'html2haml'
   gem 'quiet_assets'
+  gem 'pry'
+  gem 'pry-nav'
 end
 group :production do
   gem 'pg'

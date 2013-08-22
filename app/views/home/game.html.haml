@@ -1,3 +1,29 @@
+#myModal.reveal-modal.medium
+  %h3 Congratulations
+  %div
+    %span Total Clicks:
+    %span#clicks-span
+  %div
+    %span Total Time:
+    %span#time-span
+    %span seconds
+  %div
+    %fieldset
+      .row
+        %label{:for => "name"} Name
+        %input#name{:name => "name", :required => "required", :type => "text"}
+      .row
+        %label{:for => "email"} Email
+        %input#email{:name => "email", :required => "required", :type => "email"}
+      .row
+        %button{:onclick => "saveUserDetails()"} Submit
+  %a.close-reveal-modal{:onclick => "$('#myModal').foundation('reveal', 'close');"} ×
+#savedModal.reveal-modal.medium
+  %h3 Score Saved
+  %div
+    %a.button{:href => leaderboard_path }
+      Leader board
+  %a.close-reveal-modal{:onclick => "$('#savedModal').foundation('reveal', 'close');"} ×
 .row
   .large-12.columns
     %h1.title
@@ -38,9 +64,12 @@
       %img{:src => "/assets/aljazeera.png"}
 
 :javascript
+  var number_of_clicks = 0;
+  var number_of_seconds = 0;
+  //var id_of_game = null;
+
   $(function(){
 
-    var game_id = "#{@game.ref}";
     $('#memorygame').quizyMemoryGame({
       itemWidth: 150,
       itemHeight: 150,
@@ -52,20 +81,42 @@
       resultIcons:true,
       gameSummary: false,
       onFinishCall : function(params) {
-        result(params.clicks,params.time)
+        $('#clicks-span').html(params.clicks);
+        $('#time-span').html(params.time);
+        $('#myModal').foundation('reveal', 'open');
+        number_of_clicks = params.clicks;
+        number_of_seconds = params.time;
+        //id_of_game = game_id;
+        //result(params.clicks,params.time)
       }
     });
 
-    function result(clicks,time) {
-      $.post('/score', {
-        num_clicks : clicks,
-        time: time,
-        ref: game_id
-      },
-      function(result) {
-        console.log("Result ", result);
-      });
-    }
+    //function result(clicks,time) {
+    //  $.post('/score', {
+    //    num_clicks : clicks,
+    //    time: time,
+    //    ref: game_id
+    //  },
+    //  function(result) {
+    //    console.log("Result ", result);
+    //  });
+    //}
 
     //result(23,300);
   });
+
+  function saveUserDetails() {
+    var name = $('#name').val();
+    var email = $('#email').val();
+    $.post('/score', {
+      num_clicks : number_of_clicks,
+      time: number_of_seconds,
+      name: name,
+      email: email
+    },
+    function(result) {
+    $('#myModal').foundation('reveal', 'close');
+      console.log("Result ", result);
+      $('#savedModal').foundation('reveal', 'open');
+    });
+  }

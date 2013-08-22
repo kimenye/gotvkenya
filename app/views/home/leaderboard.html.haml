@@ -13,3 +13,10 @@
             Name
           %th
             Score
+      %tbody
+        - @games.each_with_index do |game, index|
+          - if !game.fan_id.nil?
+            %tr
+              %td= index + 1
+              %td= game.fan.name
+              %td= game.total_time
