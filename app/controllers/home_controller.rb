@@ -19,10 +19,6 @@ class HomeController < ApplicationController
     render :layout => "application"
   end
 
-  def leaderboard
-    render :layout => "application"
-  end
-
   def score
     @game = Game.new({ :ref => Digest::MD5.hexdigest(Time.now.to_s), :end_time => Time.now, :total_time => params[:time], :num_clicks => params[:num_clicks] })
     @fan = Fan.find_by_email(params[:email])
