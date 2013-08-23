@@ -25,8 +25,11 @@ class HomeController < ApplicationController
 
   def score
     @game = Game.new({ :ref => Digest::MD5.hexdigest(Time.now.to_s), :end_time => Time.now, :total_time => params[:time], :num_clicks => params[:num_clicks] })
-    @fan = Fan.new({:name => params[:name], :email => params[:email]})
-    @fan.save!
+    @fan = Fan.find_by_email(params[:email])
+    if @fan.nil?
+      @fan = Fan.new({:name => params[:name], :email => params[:email]})
+      @fan.save!
+    end
     @game.fan_id = @fan.id
     @game.save!
     respond_to do |format|
